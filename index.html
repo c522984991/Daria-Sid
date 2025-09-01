@@ -2,148 +2,203 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>乌克兰籍学员英语基础培训计划（中/英/俄三语）</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         }
         body {
             background-color: #f5f7fa;
             color: #333;
-            line-height: 1.6;
-            padding: 20px;
+            line-height: 1.7;
+            padding: 15px;
+            font-size: 16px;
         }
         .container {
-            max-width: 1200px;
+            width: 100%;
+            max-width: 800px;
             margin: 0 auto;
             background: white;
-            border-radius: 12px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.08);
-            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            padding: 20px;
         }
         .title-section {
             text-align: center;
-            margin-bottom: 40px;
-            padding-bottom: 20px;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
             border-bottom: 2px solid #4a90e2;
         }
         .title-section h1 {
             color: #2c3e50;
-            font-size: 28px;
-            margin-bottom: 15px;
+            font-size: 22px;
+            margin-bottom: 12px;
+            line-height: 1.4;
         }
         .title-section h2 {
             color: #4a90e2;
-            font-size: 20px;
+            font-size: 16px;
             font-weight: 500;
+            margin-bottom: 8px;
+            line-height: 1.5;
         }
         .section {
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
         .section-header {
             background-color: #4a90e2;
             color: white;
-            padding: 15px 20px;
-            border-radius: 8px;
-            margin-bottom: 25px;
+            padding: 12px 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
             display: flex;
             align-items: center;
+            cursor: pointer;
         }
         .section-header i {
             margin-right: 10px;
-            font-size: 20px;
+            font-size: 18px;
         }
         .section-header h3 {
-            font-size: 18px;
+            font-size: 17px;
             font-weight: 600;
+            flex: 1;
+        }
+        .section-header .toggle-icon {
+            transition: transform 0.3s ease;
+        }
+        .section-content {
+            overflow: hidden;
+            transition: max-height 0.5s ease;
         }
         .language-group {
-            margin-bottom: 20px;
-            padding: 20px;
+            margin-bottom: 18px;
+            padding: 15px;
             background-color: #f8f9fa;
             border-radius: 8px;
             border-left: 4px solid #4a90e2;
         }
         .language-label {
             font-weight: 600;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             color: #2c3e50;
             display: inline-block;
-            padding: 5px 10px;
+            padding: 4px 10px;
             background-color: #e3f2fd;
             border-radius: 4px;
+            font-size: 14px;
         }
         .stage-card {
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             border: 1px solid #e0e0e0;
-            border-radius: 8px;
+            border-radius: 10px;
             overflow: hidden;
-            transition: box-shadow 0.3s ease;
-        }
-        .stage-card:hover {
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
         }
         .stage-header {
             background-color: #f1f8fe;
-            padding: 15px 20px;
+            padding: 15px;
             border-bottom: 1px solid #e0e0e0;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
         }
         .stage-header h4 {
             color: #2c3e50;
             font-size: 16px;
-            display: flex;
-            justify-content: space-between;
+            flex: 1;
+        }
+        .stage-header .toggle-icon {
+            font-size: 16px;
+            color: #4a90e2;
+            transition: transform 0.3s ease;
         }
         .stage-content {
-            padding: 20px;
+            padding: 15px;
+            display: none;
         }
         .content-item {
-            margin-bottom: 15px;
+            margin-bottom: 18px;
         }
         .content-item-title {
             font-weight: 600;
             color: #4a90e2;
             margin-bottom: 8px;
+            font-size: 16px;
         }
         ul {
             list-style-position: inside;
-            margin-left: 10px;
+            margin-left: 5px;
         }
         li {
-            margin-bottom: 8px;
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+        p {
+            font-size: 15px;
+            line-height: 1.7;
         }
         .tools-list {
             display: flex;
             flex-wrap: wrap;
-            gap: 15px;
+            gap: 10px;
         }
         .tools-item {
             background-color: #e3f2fd;
-            padding: 8px 15px;
+            padding: 6px 12px;
             border-radius: 20px;
             color: #2c3e50;
             font-size: 14px;
         }
-        @media (max-width: 768px) {
+        /* 响应式调整 - iPhone 优化 */
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+                font-size: 15px;
+            }
             .container {
-                padding: 20px;
+                padding: 15px;
+                border-radius: 12px;
             }
             .title-section h1 {
-                font-size: 24px;
+                font-size: 20px;
             }
             .title-section h2 {
-                font-size: 18px;
+                font-size: 14px;
+            }
+            .section-header {
+                padding: 10px 12px;
             }
             .section-header h3 {
-                font-size: 16px;
+                font-size: 15px;
             }
-            .tools-list {
+            .stage-header h4 {
+                font-size: 15px;
+                line-height: 1.5;
+            }
+            .language-group {
+                padding: 12px;
+            }
+            li, p {
+                font-size: 14px;
+            }
+            /* 语言切换优化 - 移动端垂直排列 */
+            .stage-header h4 {
+                display: flex;
                 flex-direction: column;
+                gap: 5px;
             }
+            .stage-header h4 span {
+                display: block;
+            }
+        }
+        /* 展开/折叠动画类 */
+        .rotate {
+            transform: rotate(180deg);
         }
     </style>
     <!-- 引入图标库 -->
@@ -163,18 +218,21 @@
             <div class="section-header">
                 <i class="fas fa-bullseye"></i>
                 <h3>一、培训总目标（Overall Training Objectives / Общие цели обучения）</h3>
+                <i class="fas fa-chevron-down toggle-icon"></i>
             </div>
-            <div class="language-group">
-                <span class="language-label">中文</span>
-                <p>帮助学员掌握英语基础发音规则，积累日常高频词汇，学会简单句型与基础对话，能进行日常场景的简单沟通（如问候、购物、问路），建立英语学习信心与兴趣。</p>
-            </div>
-            <div class="language-group">
-                <span class="language-label">English</span>
-                <p>Help learners master basic English pronunciation rules, accumulate high-frequency daily vocabulary, learn simple sentence patterns and basic dialogues, conduct simple communication in daily scenarios (such as greetings, shopping, asking for directions), and build confidence and interest in English learning.</p>
-            </div>
-            <div class="language-group">
-                <span class="language-label">Русский</span>
-                <p>Помочь ученику освоить основные правила произношения английского языка, накопить высокочастотный повседневный словарный запас, научиться простым предложениям и базовым диалогам, вести простую коммуникацию в повседневных сценариях (например, приветствия, покупки, вопросы о направлении), а также сформировать уверенность и интерес к изучению английского языка.</p>
+            <div class="section-content">
+                <div class="language-group">
+                    <span class="language-label">中文</span>
+                    <p>帮助学员掌握英语基础发音规则，积累日常高频词汇，学会简单句型与基础对话，能进行日常场景的简单沟通（如问候、购物、问路），建立英语学习信心与兴趣。</p>
+                </div>
+                <div class="language-group">
+                    <span class="language-label">English</span>
+                    <p>Help learners master basic English pronunciation rules, accumulate high-frequency daily vocabulary, learn simple sentence patterns and basic dialogues, conduct simple communication in daily scenarios (such as greetings, shopping, asking for directions), and build confidence and interest in English learning.</p>
+                </div>
+                <div class="language-group">
+                    <span class="language-label">Русский</span>
+                    <p>Помочь ученику освоить основные правила произношения английского языка, накопить высокочастотный повседневный словарный запас, научиться простым предложениям и базовым диалогам, вести простую коммуникацию в повседневных сценариях (например, приветствия, покупки, вопросы о направлении), а также сформировать уверенность и интерес к изучению английского языка.</p>
+                </div>
             </div>
         </div>
 
@@ -182,138 +240,397 @@
         <div class="section">
             <div class="section-header">
                 <i class="fas fa-tasks"></i>
-                <h3>二、培训阶段划分与内容安排（Training Stage Division and Content Arrangement / Разделение учебного процесса на стадии и содержательное наполнение）</h3>
+                <h3>二、培训阶段划分与内容安排</h3>
+                <i class="fas fa-chevron-down toggle-icon"></i>
             </div>
-
-            <!-- 第一阶段：英语发音入门 -->
-            <div class="stage-card">
-                <div class="stage-header">
-                    <h4>
-                        <span>第一阶段：英语发音入门</span>
-                        <span>Stage 1: English Pronunciation Introduction</span>
-                        <span>Стадия 1: Знакомство с произношением английского языка</span>
-                    </h4>
+            <div class="section-content">
+                <!-- 第一阶段：英语发音入门 -->
+                <div class="stage-card">
+                    <div class="stage-header">
+                        <h4>
+                            <span>第一阶段：英语发音入门</span>
+                            <span>Stage 1: English Pronunciation</span>
+                            <span>Стадия 1: Произношение</span>
+                        </h4>
+                        <i class="fas fa-chevron-down toggle-icon"></i>
+                    </div>
+                    <div class="stage-content">
+                        <div class="content-item">
+                            <div class="content-item-title">时长（Duration / Длительность）</div>
+                            <p>2周（每周5次，每次60分钟）/ 2 weeks (5 times a week, 60 minutes each time) / 2 недели (5 раз в неделю, по 60 минут за раз)</p>
+                        </div>
+                        <div class="content-item">
+                            <div class="content-item-title">核心内容（Core Content / Основное содержание）</div>
+                            <div class="language-group">
+                                <span class="language-label">中文</span>
+                                <p>26个英文字母的发音与书写（结合大小写），区分易混淆字母（如b/d, p/q）；国际音标基础（48个音标中的元音，重点掌握长元音/短元音区别，如/iː/与/ɪ/）。</p>
+                            </div>
+                            <div class="language-group">
+                                <span class="language-label">English</span>
+                                <p>Pronunciation and writing of 26 English letters (including uppercase and lowercase), distinguishing easily confused letters (e.g., b/d, p/q); basics of International Phonetic Alphabet (vowels in 48 phonemes, focusing on the difference between long and short vowels, e.g., /iː/ and /ɪ/).</p>
+                            </div>
+                            <div class="language-group">
+                                <span class="language-label">Русский</span>
+                                <p>Произношение и письмо 26 английских букв (включая прописные и строчные), различие легко путающихся букв (например, b/d, p/q); основы Международного фонетического алфавита (гласные из 48 фонем, сосредоточение на разнице между длинными и короткими гласными, например, /iː/ и /ɪ/).</p>
+                            </div>
+                        </div>
+                        <div class="content-item">
+                            <div class="content-item-title">训练方法（Training Methods / Методы обучения）</div>
+                            <div class="language-group">
+                                <span class="language-label">中文</span>
+                                <p>字母卡片认读、音标口型模仿、发音对比练习（如听录音区分/iː/和/ɪ/）。</p>
+                            </div>
+                            <div class="language-group">
+                                <span class="language-label">English</span>
+                                <p>Recognition of letters with cards, imitation of mouth shapes for phonemes, pronunciation comparison exercises (e.g., distinguishing /iː/ and /ɪ/ by listening to recordings).</p>
+                            </div>
+                            <div class="language-group">
+                                <span class="language-label">Русский</span>
+                                <p>Распознавание букв по карточкам, имитация артикуляционной позиции для фонем, упражнения на сравнение произношения (например, различие /iː/ и /ɪ/ по аудиозаписи).</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="stage-content">
-                    <div class="content-item">
-                        <div class="content-item-title">时长（Duration / Длительность）</div>
-                        <p>2周（每周5次，每次60分钟）/ 2 weeks (5 times a week, 60 minutes each time) / 2 недели (5 раз в неделю, по 60 минут за раз)</p>
+
+                <!-- 第二阶段：基础词汇积累 -->
+                <div class="stage-card">
+                    <div class="stage-header">
+                        <h4>
+                            <span>第二阶段：基础词汇积累</span>
+                            <span>Stage 2: Basic Vocabulary</span>
+                            <span>Стадия 2: Базовый словарь</span>
+                        </h4>
+                        <i class="fas fa-chevron-down toggle-icon"></i>
                     </div>
-                    <div class="content-item">
-                        <div class="content-item-title">核心内容（Core Content / Основное содержание）</div>
-                        <div class="language-group">
-                            <span class="language-label">中文</span>
-                            <p>26个英文字母的发音与书写（结合大小写），区分易混淆字母（如b/d, p/q）；国际音标基础（48个音标中的元音，重点掌握长元音/短元音区别，如/iː/与/ɪ/）。</p>
+                    <div class="stage-content">
+                        <div class="content-item">
+                            <div class="content-item-title">时长（Duration / Длительность）</div>
+                            <p>3周（每周5次，每次60分钟）/ 3 weeks (5 times a week, 60 minutes each time) / 3 недели (5 раз в неделю, по 60 минут за раз)</p>
                         </div>
-                        <div class="language-group">
-                            <span class="language-label">English</span>
-                            <p>Pronunciation and writing of 26 English letters (including uppercase and lowercase), distinguishing easily confused letters (e.g., b/d, p/q); basics of International Phonetic Alphabet (vowels in 48 phonemes, focusing on the difference between long and short vowels, e.g., /iː/ and /ɪ/).</p>
+                        <div class="content-item">
+                            <div class="content-item-title">核心内容（Core Content / Основное содержание）</div>
+                            <div class="language-group">
+                                <span class="language-label">中文</span>
+                                <p>围绕3大日常主题积累词汇（共150-200个）：</p>
+                                <ul>
+                                    <li>主题1：个人信息（姓名、年龄、国籍、职业，如name, age, Ukraine, teacher）</li>
+                                    <li>主题2：日常物品（食物、衣物、家具，如apple, shirt, chair）</li>
+                                    <li>主题3：数字与时间（1-30的数字、星期、月份，如ten, Monday, January）</li>
+                                </ul>
+                            </div>
+                            <div class="language-group">
+                                <span class="language-label">English</span>
+                                <p>Accumulate vocabulary (150-200 words in total) around 3 daily themes:</p>
+                                <ul>
+                                    <li>Theme 1: Personal information (name, age, nationality, occupation, e.g., name, age, Ukraine, teacher)</li>
+                                    <li>Theme 2: Daily items (food, clothes, furniture, e.g., apple, shirt, chair)</li>
+                                    <li>Theme 3: Numbers and time (numbers 1-30, days of the week, months, e.g., ten, Monday, January)</li>
+                                </ul>
+                            </div>
+                            <div class="language-group">
+                                <span class="language-label">Русский</span>
+                                <p>Накопление словарного запаса (всего 150-200 слов) вокруг 3 повседневных тем:</p>
+                                <ul>
+                                    <li>Тема 1: Личная информация (имя, возраст, национальность, профессия, например, name, age, Ukraine, teacher)</li>
+                                    <li>Тема 2: Повседневные предметы (еда, одежда, мебель, например, apple, shirt, chair)</li>
+                                    <li>Тема 3: Цифры и время (цифры от 1 до 30, дни недели, месяцы, например, ten, Monday, January)</li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="language-group">
-                            <span class="language-label">Русский</span>
-                            <p>Произношение и письмо 26 английских букв (включая прописные и строчные), различие легко путающихся букв (например, b/d, p/q); основы Международного фонетического алфавита (гласные из 48 фонем, сосредоточение на разнице между длинными и короткими гласными, например, /iː/ и /ɪ/).</p>
+                        <div class="content-item">
+                            <div class="content-item-title">训练方法（Training Methods / Методы обучения）</div>
+                            <div class="language-group">
+                                <span class="language-label">中文</span>
+                                <p>词汇与图片配对、单词拼写游戏（如“单词接龙”）、结合发音记忆（用音标辅助记单词）。</p>
+                            </div>
+                            <div class="language-group">
+                                <span class="language-label">English</span>
+                                <p>Matching words with pictures, word spelling games (e.g., "word chain"), memorization combined with pronunciation (using phonemes to assist in memorizing words).</p>
+                            </div>
+                            <div class="language-group">
+                                <span class="language-label">Русский</span>
+                                <p>Сопоставление слов с изображениями, игры в написание слов (например, "цепочка слов"), запоминание с использованием произношения (помощь фонем для запоминания слов).</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="content-item">
-                        <div class="content-item-title">训练方法（Training Methods / Методы обучения）</div>
-                        <div class="language-group">
-                            <span class="language-label">中文</span>
-                            <p>字母卡片认读、音标口型模仿、发音对比练习（如听录音区分/iː/和/ɪ/）。</p>
+                </div>
+
+                <!-- 第三阶段：简单句型与语法入门 -->
+                <div class="stage-card">
+                    <div class="stage-header">
+                        <h4>
+                            <span>第三阶段：简单句型与语法入门</span>
+                            <span>Stage 3: Basic Sentences & Grammar</span>
+                            <span>Стадия 3: Простые предложения</span>
+                        </h4>
+                        <i class="fas fa-chevron-down toggle-icon"></i>
+                    </div>
+                    <div class="stage-content">
+                        <div class="content-item">
+                            <div class="content-item-title">时长（Duration / Длительность）</div>
+                            <p>4周（每周5次，每次60分钟）/ 4 weeks (5 times a week, 60 minutes each time) / 4 недели (5 раз в неделю, по 60 минут за раз)</p>
                         </div>
-                        <div class="language-group">
-                            <span class="language-label">English</span>
-                            <p>Recognition of letters with cards, imitation of mouth shapes for phonemes, pronunciation comparison exercises (e.g., distinguishing /iː/ and /ɪ/ by listening to recordings).</p>
+                        <div class="content-item">
+                            <div class="content-item-title">核心内容（Core Content / Основное содержание）</div>
+                            <div class="language-group">
+                                <span class="language-label">中文</span>
+                                <p>3种基础句型（结合第二阶段词汇）：</p>
+                                <ul>
+                                    <li>句型1：主系表（如I am a teacher. / This is an apple.）</li>
+                                    <li>句型2：主谓宾（如I like milk. / She has a pen.）</li>
+                                    <li>句型3：there be句型（如There is a book. / There are two chairs.）</li>
+                                    <li>语法基础：be动词（am/is/are）的用法、名词单复数（规则变化，如book-books）。</li>
+                                </ul>
+                            </div>
+                            <div class="language-group">
+                                <span class="language-label">English</span>
+                                <p>3 basic sentence patterns (combining vocabulary from Stage 2):</p>
+                                <ul>
+                                    <li>Pattern 1: Subject-Linking Verb-Predicative (e.g., I am a teacher. / This is an apple.)</li>
+                                    <li>Pattern 2: Subject-Verb-Object (e.g., I like milk. / She has a pen.)</li>
+                                    <li>Pattern 3: There be structure (e.g., There is a book. / There are two chairs.)</li>
+                                    <li>Grammar basics: Usage of be verbs (am/is/are), singular and plural nouns (regular changes, e.g., book-books).</li>
+                                </ul>
+                            </div>
+                            <div class="language-group">
+                                <span class="language-label">Русский</span>
+                                <p>3 основные типы предложений (с использованием словарного запаса из Стадии 2):</p>
+                                <ul>
+                                    <li>Тип 1: Подлежащее-связное глаголо-именная часть сказуемого (например, I am a teacher. / This is an apple.)</li>
+                                    <li>Тип 2: Подлежащее-глагол-объект (например, I like milk. / She has a pen.)</li>
+                                    <li>Тип 3: Структура there be (например, There is a book. / There are two chairs.)</li>
+                                    <li>Основы грамматики: Использование глагола be (am/is/are), единственное и множественное число существительных (регулярные изменения, например, book-books).</li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="language-group">
-                            <span class="language-label">Русский</span>
-                            <p>Распознавание букв по карточкам, имитация артикуляционной позиции для фонем, упражнения на сравнение произношения (например, различие /iː/ и /ɪ/ по аудиозаписи).</p>
+                        <div class="content-item">
+                            <div class="content-item-title">训练方法（Training Methods / Методы обучения）</div>
+                            <div class="language-group">
+                                <span class="language-label">中文</span>
+                                <p>句型替换练习（如把"I am a teacher."换成"He is a student."）、简单句子翻译（中/俄译英）、句型造句练习。</p>
+                            </div>
+                            <div class="language-group">
+                                <span class="language-label">English</span>
+                                <p>Sentence pattern replacement exercises (e.g., replacing "I am a teacher." with "He is a student."), translation of simple sentences (from Chinese/Russian to English), sentence-making exercises based on patterns.</p>
+                            </div>
+                            <div class="language-group">
+                                <span class="language-label">Русский</span>
+                                <p>Упражнения на замену элементов в предложении (например, замена "I am a teacher." на "He is a student."), перевод простых предложений (с китайского/русского на английский), упражнения на составление предложений по образцу.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 第四阶段：日常对话应用 -->
+                <div class="stage-card">
+                    <div class="stage-header">
+                        <h4>
+                            <span>第四阶段：日常对话应用</span>
+                            <span>Stage 4: Daily Conversations</span>
+                            <span>Стадия 4: Повседневные диалоги</span>
+                        </h4>
+                        <i class="fas fa-chevron-down toggle-icon"></i>
+                    </div>
+                    <div class="stage-content">
+                        <div class="content-item">
+                            <div class="content-item-title">时长（Duration / Длительность）</div>
+                            <p>3周（每周5次，每次60分钟）/ 3 weeks (5 times a week, 60 minutes each time) / 3 недели (5 раз в неделю, по 60 минут за раз)</p>
+                        </div>
+                        <div class="content-item">
+                            <div class="content-item-title">核心内容（Core Content / Основное содержание）</div>
+                            <div class="language-group">
+                                <span class="language-label">中文</span>
+                                <p>4个高频场景对话（结合前阶段内容）：</p>
+                                <ul>
+                                    <li>场景1：问候与介绍（如"Hello, what's your name? I'm... Where are you from? I'm from Ukraine."）</li>
+                                    <li>场景2：购物（如"How much is this shirt? It's 20 dollars. I'll take it."）</li>
+                                    <li>场景3：问路（如"Excuse me, where is the park? Go straight and turn left."）</li>
+                                    <li>场景4：谈论时间（如"What day is it today? It's Monday. What time is it? It's 3 o'clock."）</li>
+                                </ul>
+                            </div>
+                            <div class="language-group">
+                                <span class="language-label">English</span>
+                                <p>4 high-frequency scenario dialogues (combining content from previous stages):</p>
+                                <ul>
+                                    <li>Scenario 1: Greetings and introductions (e.g., "Hello, what's your name? I'm... Where are you from? I'm from Ukraine.")</li>
+                                    <li>Scenario 2: Shopping (e.g., "How much is this shirt? It's 20 dollars. I'll take it.")</li>
+                                    <li>Scenario 3: Asking for directions (e.g., "Excuse me, where is the park? Go straight and turn left.")</li>
+                                    <li>Scenario 4: Talking about time (e.g., "What day is it today? It's Monday. What time is it? It's 3 o'clock.")</li>
+                                </ul>
+                            </div>
+                            <div class="language-group">
+                                <span class="language-label">Русский</span>
+                                <p>4 диалога с высокой частотой использования (с использованием содержания предыдущих стадий):</p>
+                                <ul>
+                                    <li>Сценарий 1: Приветствия и знакомство (например, "Hello, what's your name? I'm... Where are you from? I'm from Ukraine.")</li>
+                                    <li>Сценарий 2: Покупки (например, "How much is this shirt? It's 20 dollars. I'll take it.")</li>
+                                    <li>Сценарий 3: Вопросы о направлении (например, "Excuse me, where is the park? Go straight and turn left.")</li>
+                                    <li>Сценарий 4: Обсуждение времени (например, "What day is it today? It's Monday. What time is it? It's 3 o'clock.")</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="content-item">
+                            <div class="content-item-title">训练方法（Training Methods / Методы обучения）</div>
+                            <div class="language-group">
+                                <span class="language-label">中文</span>
+                                <p>对话跟读（听录音模仿语气）、角色扮演（师生模拟场景对话）、纠错与反馈（重点纠正发音和句型错误）。</p>
+                            </div>
+                            <div class="language-group">
+                                <span class="language-label">English</span>
+                                <p>Following dialogues by listening and repeating (imitating tone from recordings), role-playing (teacher and student simulate scenario dialogues), error correction and feedback (focusing on correcting pronunciation and sentence pattern mistakes).</p>
+                            </div>
+                            <div class="language-group">
+                                <span class="language-label">Русский</span>
+                                <p>Послепрослушивание и повторение диалогов (имитация интонации по аудиозаписи), ролевые игры (учитель и ученик имитируют диалог в сценарии), исправление ошибок и обратная связь (сосредоточение на исправлении ошибок в произношении и предложениях).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 第五阶段：复习与成果检验 -->
+                <div class="stage-card">
+                    <div class="stage-header">
+                        <h4>
+                            <span>第五阶段：复习与成果检验</span>
+                            <span>Stage 5: Review & Assessment</span>
+                            <span>Стадия 5: Повторение и проверка</span>
+                        </h4>
+                        <i class="fas fa-chevron-down toggle-icon"></i>
+                    </div>
+                    <div class="stage-content">
+                        <div class="content-item">
+                            <div class="content-item-title">时长（Duration / Длительность）</div>
+                            <p>2周（每周5次，每次60分钟）/ 2 weeks (5 times a week, 60 minutes each time) / 2 недели (5 раз в неделю, по 60 минут за раз)</p>
+                        </div>
+                        <div class="content-item">
+                            <div class="content-item-title">核心内容（Core Content / Основное содержание）</div>
+                            <div class="language-group">
+                                <span class="language-label">中文</span>
+                                <p>分模块复习（发音/词汇/句型/对话），通过"主题任务"检验（如让学员用英语介绍自己的一天、模拟购物场景完成交易）；针对薄弱环节（如某类音标、某句型）强化训练。</p>
+                            </div>
+                            <div class="language-group">
+                                <span class="language-label">English</span>
+                                <p>Module-by-module review (pronunciation/vocabulary/sentence patterns/dialogues), assessment through "theme tasks" (e.g., asking learners to introduce their day in English, simulating a shopping scenario to complete a transaction); intensive training for weak points (e.g., a certain type of phoneme, a certain sentence pattern).</p>
+                            </div>
+                            <div class="language-group">
+                                <span class="language-label">Русский</span>
+                                <p>Повторение по модулям (произношение/словарный запас/предложения/диалоги), оценка с помощью "тематических заданий" (например, ученик представляет свой день по-английски, имитирует сценарий покупок для завершения транзакции); интенсивное обучение для слабых мест (например, определенный тип фонем, определенный тип предложений).</p>
+                            </div>
+                        </div>
+                        <div class="content-item">
+                            <div class="content-item-title">检验方式（Assessment Method / Метод оценки）</div>
+                            <div class="language-group">
+                                <span class="language-label">中文</span>
+                                <p>口头测试（对话问答）、书面测试（字母拼写、单词默写、简单句型填空）、场景任务完成度评估。</p>
+                            </div>
+                            <div class="language-group">
+                                <span class="language-label">English</span>
+                                <p>Oral test (dialogue questions and answers), written test (letter spelling, word dictation, filling in blanks for simple sentence patterns), assessment of scenario task completion.</p>
+                            </div>
+                            <div class="language-group">
+                                <span class="language-label">Русский</span>
+                                <p>Оральный тест (ответы на вопросы в диалоге), письменный тест (письмо букв, диктант слов, заполнение пропусков в простых предложениях), оценка завершенности тематических заданий.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- 第二阶段：基础词汇积累 -->
-            <div class="stage-card">
-                <div class="stage-header">
-                    <h4>
-                        <span>第二阶段：基础词汇积累</span>
-                        <span>Stage 2: Basic Vocabulary Accumulation</span>
-                        <span>Стадия 2: Накопление базового словарного запаса</span>
-                    </h4>
+        <!-- 第三部分：教学辅助工具 -->
+        <div class="section">
+            <div class="section-header">
+                <i class="fas fa-tools"></i>
+                <h3>三、教学辅助工具（Teaching Aids / Учебные материалы）</h3>
+                <i class="fas fa-chevron-down toggle-icon"></i>
+            </div>
+            <div class="section-content">
+                <div class="language-group">
+                    <span class="language-label">中文</span>
+                    <div class="tools-list">
+                        <div class="tools-item">字母卡片</div>
+                        <div class="tools-item">音标图表</div>
+                        <div class="tools-item">词汇图片卡</div>
+                        <div class="tools-item">英语日常对话录音（慢速版）</div>
+                        <div class="tools-item">白板与马克笔</div>
+                    </div>
                 </div>
-                <div class="stage-content">
-                    <div class="content-item">
-                        <div class="content-item-title">时长（Duration / Длительность）</div>
-                        <p>3周（每周5次，每次60分钟）/ 3 weeks (5 times a week, 60 minutes each time) / 3 недели (5 раз в неделю, по 60 минут за раз)</p>
+                <div class="language-group">
+                    <span class="language-label">English</span>
+                    <div class="tools-list">
+                        <div class="tools-item">Letter cards</div>
+                        <div class="tools-item">Phonetic charts</div>
+                        <div class="tools-item">Vocabulary picture cards</div>
+                        <div class="tools-item">Slow-speed dialogue recordings</div>
+                        <div class="tools-item">Whiteboard and markers</div>
                     </div>
-                    <div class="content-item">
-                        <div class="content-item-title">核心内容（Core Content / Основное содержание）</div>
-                        <div class="language-group">
-                            <span class="language-label">中文</span>
-                            <p>围绕3大日常主题积累词汇（共150-200个）：</p>
-                            <ul>
-                                <li>主题1：个人信息（姓名、年龄、国籍、职业，如name, age, Ukraine, teacher）</li>
-                                <li>主题2：日常物品（食物、衣物、家具，如apple, shirt, chair）</li>
-                                <li>主题3：数字与时间（1-30的数字、星期、月份，如ten, Monday, January）</li>
-                            </ul>
-                        </div>
-                        <div class="language-group">
-                            <span class="language-label">English</span>
-                            <p>Accumulate vocabulary (150-200 words in total) around 3 daily themes:</p>
-                            <ul>
-                                <li>Theme 1: Personal information (name, age, nationality, occupation, e.g., name, age, Ukraine, teacher)</li>
-                                <li>Theme 2: Daily items (food, clothes, furniture, e.g., apple, shirt, chair)</li>
-                                <li>Theme 3: Numbers and time (numbers 1-30, days of the week, months, e.g., ten, Monday, January)</li>
-                            </ul>
-                        </div>
-                        <div class="language-group">
-                            <span class="language-label">Русский</span>
-                            <p>Накопление словарного запаса (всего 150-200 слов) вокруг 3 повседневных тем:</p>
-                            <ul>
-                                <li>Тема 1: Личная информация (имя, возраст, национальность, профессия, например, name, age, Ukraine, teacher)</li>
-                                <li>Тема 2: Повседневные предметы (еда, одежда, мебель, например, apple, shirt, chair)</li>
-                                <li>Тема 3: Цифры и время (цифры от 1 до 30, дни недели, месяцы, например, ten, Monday, January)</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="content-item">
-                        <div class="content-item-title">训练方法（Training Methods / Методы обучения）</div>
-                        <div class="language-group">
-                            <span class="language-label">中文</span>
-                            <p>词汇与图片配对、单词拼写游戏（如“单词接龙”）、结合发音记忆（用音标辅助记单词）。</p>
-                        </div>
-                        <div class="language-group">
-                            <span class="language-label">English</span>
-                            <p>Matching words with pictures, word spelling games (e.g., "word chain"), memorization combined with pronunciation (using phonemes to assist in memorizing words).</p>
-                        </div>
-                        <div class="language-group">
-                            <span class="language-label">Русский</span>
-                            <p>Сопоставление слов с изображениями, игры в написание слов (например, "цепочка слов"), запоминание с использованием произношения (помощь фонем для запоминания слов).</p>
-                        </div>
+                </div>
+                <div class="language-group">
+                    <span class="language-label">Русский</span>
+                    <div class="tools-list">
+                        <div class="tools-item">Карточки с буквами</div>
+                        <div class="tools-item">Фонетические схемы</div>
+                        <div class="tools-item">Карточки с изображениями</div>
+                        <div class="tools-item">Аудиозаписи диалогов (медленная скорость)</div>
+                        <div class="tools-item">Доска и маркеры</div>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
 
-            <!-- 第三阶段：简单句型与语法入门 -->
-            <div class="stage-card">
-                <div class="stage-header">
-                    <h4>
-                        <span>第三阶段：简单句型与语法入门</span>
-                        <span>Stage 3: Simple Sentence Patterns and Grammar Introduction</span>
-                        <span>Стадия 3: Простыми предложениями и основами грамматики</span>
-                    </h4>
-                </div>
-                <div class="stage-content">
-                    <div class="content-item">
-                        <div class="content-item-title">时长（Duration / Длительность）</div>
-                        <p>4周（每周5次，每次60分钟）/ 4 weeks (5 times a week, 60 minutes each time) / 4 недели (5 раз в неделю, по 60 минут за раз)</p>
-                    </div>
-                    <div class="content-item">
-                        <div class="content-item-title">核心内容（Core Content / Основное содержание）</div>
-                        <div class="language-group">
-                            <span class="language-label">中文</span>
-                            <p>3种基础句型（结合第二阶段词汇）：</p>
-                            <ul>
-                                <li>句型1：主系表（如I am a teacher. / This is an apple.）</li>
-                                <li>句型2：主谓宾（如I like milk. / She has a pen.）</li>
-                                <li>句型3：there be句型（如There is a book. / There are two chairs.）</li>
+    <script>
+        // 实现展开/折叠功能，提升移动端浏览体验
+        document.addEventListener('DOMContentLoaded', function() {
+            // 阶段卡片展开/折叠
+            const stageHeaders = document.querySelectorAll('.stage-header');
+            stageHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector('.toggle-icon');
+                    
+                    // 切换内容显示状态
+                    if (content.style.display === 'block') {
+                        content.style.display = 'none';
+                        icon.classList.remove('rotate');
+                    } else {
+                        content.style.display = 'block';
+                        icon.classList.add('rotate');
+                    }
+                });
+            });
+
+            // 部分卡片默认展开
+            const firstStage = document.querySelector('.stage-card:first-child .stage-content');
+            const firstStageIcon = document.querySelector('.stage-card:first-child .toggle-icon');
+            if (firstStage) {
+                firstStage.style.display = 'block';
+                firstStageIcon.classList.add('rotate');
+            }
+
+            // 大章节展开/折叠
+            const sectionHeaders = document.querySelectorAll('.section-header');
+            sectionHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector('.toggle-icon');
+                    
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                        icon.classList.remove('rotate');
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                        icon.classList.add('rotate');
+                    }
+                });
+            });
+
+            // 初始化所有章节内容高度
+            const sectionContents = document.querySelectorAll('.section-content');
+            sectionContents.forEach(content => {
+                content.style.maxHeight = content.scrollHeight + 'px';
+            });
+        });
+    </script>
+</body>
+</html>
