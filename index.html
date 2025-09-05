@@ -1,628 +1,422 @@
-<!DOCTYPE html>
-<html lang="ru">
+<!doctype html>
+<html lang="zh">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>План обучения английскому языку (русский/английский/китайский)</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        }
-        body {
-            background-color: #f5f7fa;
-            color: #333;
-            line-height: 1.7;
-            padding: 15px;
-            font-size: 16px;
-        }
-        .container {
-            width: 100%;
-            max-width: 800px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 16px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            padding: 20px;
-        }
-        .title-section {
-            text-align: center;
-            margin-bottom: 30px;
-            padding-bottom: 15px;
-            border-bottom: 2px solid #4a90e2;
-        }
-        .title-section h1 {
-            color: #2c3e50;
-            font-size: 22px;
-            margin-bottom: 12px;
-            line-height: 1.4;
-        }
-        .title-section h2 {
-            color: #4a90e2;
-            font-size: 16px;
-            font-weight: 500;
-            margin-bottom: 8px;
-            line-height: 1.5;
-        }
-        .section {
-            margin-bottom: 30px;
-        }
-        .section-header {
-            background-color: #4a90e2;
-            color: white;
-            padding: 12px 15px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-        }
-        .section-header i {
-            margin-right: 10px;
-            font-size: 18px;
-        }
-        .section-header h3 {
-            font-size: 17px;
-            font-weight: 600;
-            flex: 1;
-        }
-        .section-header .toggle-icon {
-            transition: transform 0.3s ease;
-        }
-        .section-content {
-            overflow: hidden;
-            transition: max-height 0.5s ease;
-        }
-        .language-group {
-            margin-bottom: 18px;
-            padding: 15px;
-            background-color: #f8f9fa;
-            border-radius: 8px;
-            border-left: 4px solid #4a90e2;
-        }
-        .language-label {
-            font-weight: 600;
-            margin-bottom: 8px;
-            color: #2c3e50;
-            display: inline-block;
-            padding: 4px 10px;
-            background-color: #e3f2fd;
-            border-radius: 4px;
-            font-size: 14px;
-        }
-        .stage-card {
-            margin-bottom: 25px;
-            border: 1px solid #e0e0e0;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-        }
-        .stage-header {
-            background-color: #f1f8fe;
-            padding: 15px;
-            border-bottom: 1px solid #e0e0e0;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-        }
-        .stage-header h4 {
-            color: #2c3e50;
-            font-size: 16px;
-            flex: 1;
-        }
-        .stage-header .toggle-icon {
-            font-size: 16px;
-            color: #4a90e2;
-            transition: transform 0.3s ease;
-        }
-        .stage-content {
-            padding: 15px;
-            display: none;
-        }
-        .content-item {
-            margin-bottom: 18px;
-        }
-        .content-item-title {
-            font-weight: 600;
-            color: #4a90e2;
-            margin-bottom: 8px;
-            font-size: 16px;
-        }
-        ul {
-            list-style-position: inside;
-            margin-left: 5px;
-        }
-        li {
-            margin-bottom: 10px;
-            font-size: 15px;
-        }
-        p {
-            font-size: 15px;
-            line-height: 1.7;
-        }
-        .tools-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        .tools-item {
-            background-color: #e3f2fd;
-            padding: 6px 12px;
-            border-radius: 20px;
-            color: #2c3e50;
-            font-size: 14px;
-        }
-        /* 响应式调整 - 移动端优化 */
-        @media (max-width: 480px) {
-            body {
-                padding: 10px;
-                font-size: 15px;
-            }
-            .container {
-                padding: 15px;
-                border-radius: 12px;
-            }
-            .title-section h1 {
-                font-size: 20px;
-            }
-            .title-section h2 {
-                font-size: 14px;
-            }
-            .section-header {
-                padding: 10px 12px;
-            }
-            .section-header h3 {
-                font-size: 15px;
-            }
-            .stage-header h4 {
-                font-size: 15px;
-                line-height: 1.5;
-            }
-            .language-group {
-                padding: 12px;
-            }
-            li, p {
-                font-size: 14px;
-            }
-            /* 语言切换优化 - 移动端垂直排列 */
-            .stage-header h4 {
-                display: flex;
-                flex-direction: column;
-                gap: 5px;
-            }
-            .stage-header h4 span {
-                display: block;
-            }
-        }
-        /* 展开/折叠动画类 */
-        .rotate {
-            transform: rotate(180deg);
-        }
-    </style>
-    <!-- 引入图标库 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>SOLO Gaylord 托盘布局与 CSV 导出 / SOLO Gaylord Pallet Layout</title>
+<style>
+  body { font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; margin:16px; color:#222; background:#f7f8fb; }
+  h1 { font-size:18px; margin-bottom:8px; }
+  .controls { margin-bottom:10px; display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
+  .btn { padding:6px 10px; border-radius:4px; border:1px solid #888; background:#f3f3f3; cursor:pointer; }
+  .btn.active { background:#1f78d1; color:#fff; border-color:#1f78d1; }
+  .canvas { display:flex; gap:18px; flex-wrap:wrap; align-items:flex-start; }
+  .card { border:1px solid #e0e6ef; padding:10px; background:#fff; box-shadow:0 1px 4px rgba(15,23,42,0.04); width:460px; }
+  .vehicle-title { font-weight:700; margin-bottom:8px; }
+  svg { background: linear-gradient(180deg,#ffffff,#fbfdff); display:block; margin:6px 0; }
+  .meta { font-size:13px; margin-top:6px; color:#333; line-height:1.4; }
+  .small { font-size:12px; color:#555; }
+  label.input { font-size:13px; margin-right:6px; }
+  input[type="number"] { width:84px; padding:6px; border-radius:4px; border:1px solid #bbb; }
+  .footer { margin-top:12px; font-size:13px; color:#444; }
+  .inline { display:inline-block; vertical-align:middle; }
+  .control-block { background:#fff; border:1px solid #e6eef9; padding:8px; border-radius:6px; box-shadow:0 1px 2px rgba(20,40,80,0.02); }
+  .row { display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+  .note { font-size:12px; color:#666; margin-top:6px; }
+  table.summary { width:100%; border-collapse:collapse; margin-top:8px; font-size:13px;}
+  table.summary th, table.summary td { border:1px solid #eee; padding:6px; text-align:left; }
+  .link { color:#1f78d1; text-decoration:none; }
+  .csv-btn { background:#10b981; color:#fff; border-color:#10b981; }
+  .small-muted { font-size:12px; color:#666; }
+  .field { margin-right:8px; }
+</style>
 </head>
 <body>
-    <div class="container">
-        <!-- 标题区域 - 俄语优先 -->
-        <div class="title-section">
-            <h1>План базового изучения английского языка</h1>
-            <h2>Basic English Training Plan Framework</h2>
-            <h2>英语基础培训计划框架</h2>
-        </div>
+<h1 id="title-cn">SOLO — Gaylord 在托盘上的布局可视化与 CSV 导出（含偏移调节 / 中英）</h1>
 
-        <!-- 第一部分：培训总目标 -->
-        <div class="section">
-            <div class="section-header">
-                <i class="fas fa-bullseye"></i>
-                <h3>1. Общие цели обучения (Overall Training Objectives / 培训总目标)</h3>
-                <i class="fas fa-chevron-down toggle-icon"></i>
-            </div>
-            <div class="section-content">
-                <div class="language-group">
-                    <span class="language-label">Русский</span>
-                    <p>Помочь ученику освоить основные правила произношения английского языка, накопить высокочастотный повседневный словарный запас, научиться простым предложениям и базовым диалогам, вести простую коммуникацию в повседневных сценариях (например, приветствия, покупки, вопросы о направлении), а также сформировать уверенность и интерес к изучению английского языка.</p>
-                </div>
-                <div class="language-group">
-                    <span class="language-label">English</span>
-                    <p>Help learners master basic English pronunciation rules, accumulate high-frequency daily vocabulary, learn simple sentence patterns and basic dialogues, conduct simple communication in daily scenarios (such as greetings, shopping, asking for directions), and build confidence and interest in English learning.</p>
-                </div>
-                <div class="language-group">
-                    <span class="language-label">中文</span>
-                    <p>帮助学员掌握英语基础发音规则，积累日常高频词汇，学会简单句型与基础对话，能进行日常场景的简单沟通（如问候、购物、问路），建立英语学习信心与兴趣。</p>
-                </div>
-            </div>
-        </div>
+<div class="controls control-block">
+  <div class="row">
+    <button id="langCn" class="btn active">中文</button>
+    <button id="langEn" class="btn">EN</button>
 
-        <!-- 第二部分：培训阶段划分与内容安排 -->
-        <div class="section">
-            <div class="section-header">
-                <i class="fas fa-tasks"></i>
-                <h3>2. Разделение на стадии и содержание (Stage Division and Content / 培训阶段划分与内容安排)</h3>
-                <i class="fas fa-chevron-down toggle-icon"></i>
-            </div>
-            <div class="section-content">
-                <!-- 第一阶段：英语发音入门 -->
-                <div class="stage-card">
-                    <div class="stage-header">
-                        <h4>
-                            <span>Стадия 1: Произношение</span>
-                            <span>Stage 1: English Pronunciation</span>
-                            <span>第一阶段：英语发音入门</span>
-                        </h4>
-                        <i class="fas fa-chevron-down toggle-icon"></i>
-                    </div>
-                    <div class="stage-content">
-                        <div class="content-item">
-                            <div class="content-item-title">Длительность (Duration / 时长)</div>
-                            <p>2 недели (5 раз в неделю, по 60 минут за раз) / 2 weeks (5 times a week, 60 minutes each time) / 2周（每周5次，每次60分钟）</p>
-                        </div>
-                        <div class="content-item">
-                            <div class="content-item-title">Основное содержание (Core Content / 核心内容)</div>
-                            <div class="language-group">
-                                <span class="language-label">Русский</span>
-                                <p>Произношение и письмо 26 английских букв (включая прописные и строчные), различие легко путающихся букв (например, b/d, p/q); основы Международного фонетического алфавита (гласные из 48 фонем, сосредоточение на разнице между длинными и короткими гласными, например, /iː/ и /ɪ/).</p>
-                            </div>
-                            <div class="language-group">
-                                <span class="language-label">English</span>
-                                <p>Pronunciation and writing of 26 English letters (including uppercase and lowercase), distinguishing easily confused letters (e.g., b/d, p/q); basics of International Phonetic Alphabet (vowels in 48 phonemes, focusing on the difference between long and short vowels, e.g., /iː/ and /ɪ/).</p>
-                            </div>
-                            <div class="language-group">
-                                <span class="language-label">中文</span>
-                                <p>26个英文字母的发音与书写（结合大小写），区分易混淆字母（如b/d, p/q）；国际音标基础（48个音标中的元音，重点掌握长元音/短元音区别，如/iː/与/ɪ/）。</p>
-                            </div>
-                        </div>
-                        <div class="content-item">
-                            <div class="content-item-title">Методы обучения (Training Methods / 训练方法)</div>
-                            <div class="language-group">
-                                <span class="language-label">Русский</span>
-                                <p>Распознавание букв по карточкам, имитация артикуляционной позиции для фонем, упражнения на сравнение произношения (например, различие /iː/ и /ɪ/ по аудиозаписи).</p>
-                            </div>
-                            <div class="language-group">
-                                <span class="language-label">English</span>
-                                <p>Recognition of letters with cards, imitation of mouth shapes for phonemes, pronunciation comparison exercises (e.g., distinguishing /iː/ and /ɪ/ by listening to recordings).</p>
-                            </div>
-                            <div class="language-group">
-                                <span class="language-label">中文</span>
-                                <p>字母卡片认读、音标口型模仿、发音对比练习（如听录音区分/iː/和/ɪ/）。</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <button id="palletEU" class="btn">欧洲托盘 1.2×0.8 m</button>
+    <button id="palletNS" class="btn active">非标准托盘 1.2×1.0 m</button>
 
-                <!-- 第二阶段：基础词汇积累 -->
-                <div class="stage-card">
-                    <div class="stage-header">
-                        <h4>
-                            <span>Стадия 2: Базовый словарь</span>
-                            <span>Stage 2: Basic Vocabulary</span>
-                            <span>第二阶段：基础词汇积累</span>
-                        </h4>
-                        <i class="fas fa-chevron-down toggle-icon"></i>
-                    </div>
-                    <div class="stage-content">
-                        <div class="content-item">
-                            <div class="content-item-title">Длительность (Duration / 时长)</div>
-                            <p>3 недели (5 раз в неделю, по 60 минут за раз) / 3 weeks (5 times a week, 60 minutes each time) / 3周（每周5次，每次60分钟）</p>
-                        </div>
-                        <div class="content-item">
-                            <div class="content-item-title">Основное содержание (Core Content / 核心内容)</div>
-                            <div class="language-group">
-                                <span class="language-label">Русский</span>
-                                <p>Накопление словарного запаса (всего 150-200 слов) вокруг 3 повседневных тем:</p>
-                                <ul>
-                                    <li>Тема 1: Личная информация (имя, возраст, национальность, профессия, например, name, age, Ukraine, teacher)</li>
-                                    <li>Тема 2: Повседневные предметы (еда, одежда, мебель, например, apple, shirt, chair)</li>
-                                    <li>Тема 3: Цифры и время (цифры от 1 до 30, дни недели, месяцы, например, ten, Monday, January)</li>
-                                </ul>
-                            </div>
-                            <div class="language-group">
-                                <span class="language-label">English</span>
-                                <p>Accumulate vocabulary (150-200 words in total) around 3 daily themes:</p>
-                                <ul>
-                                    <li>Theme 1: Personal information (name, age, nationality, occupation, e.g., name, age, Ukraine, teacher)</li>
-                                    <li>Theme 2: Daily items (food, clothes, furniture, e.g., apple, shirt, chair)</li>
-                                    <li>Theme 3: Numbers and time (numbers 1-30, days of the week, months, e.g., ten, Monday, January)</li>
-                                </ul>
-                            </div>
-                            <div class="language-group">
-                                <span class="language-label">中文</span>
-                                <p>围绕3大日常主题积累词汇（共150-200个）：</p>
-                                <ul>
-                                    <li>主题1：个人信息（姓名、年龄、国籍、职业，如name, age, Ukraine, teacher）</li>
-                                    <li>主题2：日常物品（食物、衣物、家具，如apple, shirt, chair）</li>
-                                    <li>主题3：数字与时间（1-30的数字、星期、月份，如ten, Monday, January）</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="content-item">
-                            <div class="content-item-title">Методы обучения (Training Methods / 训练方法)</div>
-                            <div class="language-group">
-                                <span class="language-label">Русский</span>
-                                <p>Сопоставление слов с изображениями, игры в написание слов (например, "цепочка слов"), запоминание с использованием произношения (помощь фонем для запоминания слов).</p>
-                            </div>
-                            <div class="language-group">
-                                <span class="language-label">English</span>
-                                <p>Matching words with pictures, word spelling games (e.g., "word chain"), memorization combined with pronunciation (using phonemes to assist in memorizing words).</p>
-                            </div>
-                            <div class="language-group">
-                                <span class="language-label">中文</span>
-                                <p>词汇与图片配对、单词拼写游戏（如“单词接龙”）、结合发音记忆（用音标辅助记单词）。</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <label class="input small">Scale (px / m)</label>
+    <input id="scale" type="number" value="28" min="8" max="160"/>
+  </div>
 
-                <!-- 第三阶段：简单句型与语法入门 -->
-                <div class="stage-card">
-                    <div class="stage-header">
-                        <h4>
-                            <span>Стадия 3: Простые предложения</span>
-                            <span>Stage 3: Basic Sentences & Grammar</span>
-                            <span>第三阶段：简单句型与语法入门</span>
-                        </h4>
-                        <i class="fas fa-chevron-down toggle-icon"></i>
-                    </div>
-                    <div class="stage-content">
-                        <div class="content-item">
-                            <div class="content-item-title">Длительность (Duration / 时长)</div>
-                            <p>4 недели (5 раз в неделю, по 60 минут за раз) / 4 weeks (5 times a week, 60 minutes each time) / 4周（每周5次，每次60分钟）</p>
-                        </div>
-                        <div class="content-item">
-                            <div class="content-item-title">Основное содержание (Core Content / 核心内容)</div>
-                            <div class="language-group">
-                                <span class="language-label">Русский</span>
-                                <p>3 основные типы предложений (с использованием словарного запаса из Стадии 2):</p>
-                                <ul>
-                                    <li>Тип 1: Подлежащее-связное глаголо-именная часть сказуемого (например, I am a teacher. / This is an apple.)</li>
-                                    <li>Тип 2: Подлежащее-глагол-объект (например, I like milk. / She has a pen.)</li>
-                                    <li>Тип 3: Структура there be (например, There is a book. / There are two chairs.)</li>
-                                    <li>Основы грамматики: Использование глагола be (am/is/are), единственное и множественное число существительных (регулярные изменения, например, book-books).</li>
-                                </ul>
-                            </div>
-                            <div class="language-group">
-                                <span class="language-label">English</span>
-                                <p>3 basic sentence patterns (combining vocabulary from Stage 2):</p>
-                                <ul>
-                                    <li>Pattern 1: Subject-Linking Verb-Predicative (e.g., I am a teacher. / This is an apple.)</li>
-                                    <li>Pattern 2: Subject-Verb-Object (e.g., I like milk. / She has a pen.)</li>
-                                    <li>Pattern 3: There be structure (e.g., There is a book. / There are two chairs.)</li>
-                                    <li>Grammar basics: Usage of be verbs (am/is/are), singular and plural nouns (regular changes, e.g., book-books).</li>
-                                </ul>
-                            </div>
-                            <div class="language-group">
-                                <span class="language-label">中文</span>
-                                <p>3种基础句型（结合第二阶段词汇）：</p>
-                                <ul>
-                                    <li>句型1：主系表（如I am a teacher. / This is an apple.）</li>
-                                    <li>句型2：主谓宾（如I like milk. / She has a pen.）</li>
-                                    <li>句型3：there be句型（如There is a book. / There are two chairs.）</li>
-                                    <li>语法基础：be动词（am/is/are）的用法、名词单复数（规则变化，如book-books）。</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="content-item">
-                            <div class="content-item-title">Методы обучения (Training Methods / 训练方法)</div>
-                            <div class="language-group">
-                                <span class="language-label">Русский</span>
-                                <p>Упражнения на замену элементов в предложении (например, замена "I am a teacher." на "He is a student."), перевод простых предложений (с русского/китайского на английский), упражнения на составление предложений по образцу.</p>
-                            </div>
-                            <div class="language-group">
-                                <span class="language-label">English</span>
-                                <p>Sentence pattern replacement exercises (e.g., replacing "I am a teacher." with "He is a student."), translation of simple sentences (from Russian/Chinese to English), sentence-making exercises based on patterns.</p>
-                            </div>
-                            <div class="language-group">
-                                <span class="language-label">中文</span>
-                                <p>句型替换练习（如把"I am a teacher."换成"He is a student."）、简单句子翻译（俄/中译英）、句型造句练习。</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 第四阶段：日常对话应用 -->
-                <div class="stage-card">
-                    <div class="stage-header">
-                        <h4>
-                            <span>Стадия 4: Повседневные диалоги</span>
-                            <span>Stage 4: Daily Conversations</span>
-                            <span>第四阶段：日常对话应用</span>
-                        </h4>
-                        <i class="fas fa-chevron-down toggle-icon"></i>
-                    </div>
-                    <div class="stage-content">
-                        <div class="content-item">
-                            <div class="content-item-title">Длительность (Duration / 时长)</div>
-                            <p>3 недели (5 раз в неделю, по 60 минут за раз) / 3 weeks (5 times a week, 60 minutes each time) / 3周（每周5次，每次60分钟）</p>
-                        </div>
-                        <div class="content-item">
-                            <div class="content-item-title">Основное содержание (Core Content / 核心内容)</div>
-                            <div class="language-group">
-                                <span class="language-label">Русский</span>
-                                <p>4 диалога с высокой частотой использования (с использованием содержания предыдущих стадий):</p>
-                                <ul>
-                                    <li>Сценарий 1: Приветствия и знакомство (например, "Hello, what's your name? I'm from Ukraine.")</li>
-                                    <li>Сценарий 2: Покупки (например, "How much is this shirt? It's 20 dollars. I'll take it.")</li>
-                                    <li>Сценарий 3: Вопросы о направлении (например, "Excuse me, where is the park? Go straight and turn left.")</li>
-                                    <li>Сценарий 4: Обсуждение времени (например, "What day is it today? It's Monday. What time is it? It's 3 o'clock.")</li>
-                                </ul>
-                            </div>
-                            <div class="language-group">
-                                <span class="language-label">English</span>
-                                <p>4 high-frequency scenario dialogues (combining content from previous stages):</p>
-                                <ul>
-                                    <li>Scenario 1: Greetings and introductions (e.g., "Hello, what's your name? I'm from Ukraine.")</li>
-                                    <li>Scenario 2: Shopping (e.g., "How much is this shirt? It's 20 dollars. I'll take it.")</li>
-                                    <li>Scenario 3: Asking for directions (e.g., "Excuse me, where is the park? Go straight and turn left.")</li>
-                                    <li>Scenario 4: Talking about time (e.g., "What day is it today? It's Monday. What time is it? It's 3 o'clock.")</li>
-                                </ul>
-                            </div>
-                            <div class="language-group">
-                                <span class="language-label">中文</span>
-                                <p>4个高频场景对话（结合前阶段内容）：</p>
-                                <ul>
-                                    <li>场景1：问候与介绍（如"Hello, what's your name? I'm from Ukraine."）</li>
-                                    <li>场景2：购物（如"How much is this shirt? It's 20 dollars. I'll take it."）</li>
-                                    <li>场景3：问路（如"Excuse me, where is the park? Go straight and turn left."）</li>
-                                    <li>场景4：谈论时间（如"What day is it today? It's Monday. What time is it? It's 3 o'clock."）</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="content-item">
-                            <div class="content-item-title">Методы обучения (Training Methods / 训练方法)</div>
-                            <div class="language-group">
-                                <span class="language-label">Русский</span>
-                                <p>Послепрослушивание и повторение диалогов (имитация интонации по аудиозаписи), ролевые игры (учитель и ученик имитируют диалог в сценарии), исправление ошибок и обратная связь (сосредоточение на исправлении ошибок в произношении и предложениях).</p>
-                            </div>
-                            <div class="language-group">
-                                <span class="language-label">English</span>
-                                <p>Following dialogues by listening and repeating (imitating tone from recordings), role-playing (teacher and student simulate scenario dialogues), error correction and feedback (focusing on correcting pronunciation and sentence pattern mistakes).</p>
-                            </div>
-                            <div class="language-group">
-                                <span class="language-label">中文</span>
-                                <p>对话跟读（听录音模仿语气）、角色扮演（师生模拟场景对话）、纠错与反馈（重点纠正发音和句型错误）。</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 第五阶段：复习与成果检验 -->
-                <div class="stage-card">
-                    <div class="stage-header">
-                        <h4>
-                            <span>Стадия 5: Повторение и проверка</span>
-                            <span>Stage 5: Review & Assessment</span>
-                            <span>第五阶段：复习与成果检验</span>
-                        </h4>
-                        <i class="fas fa-chevron-down toggle-icon rotate"></i>
-                    </div>
-                    <div class="stage-content" style="display: block;">
-                        <div class="content-item">
-                            <div class="content-item-title">Длительность (Duration / 时长)</div>
-                            <p>2 недели (5 раз в неделю, по 60 минут за раз) / 2 weeks (5 times a week, 60 minutes each time) / 2周（每周5次，每次60分钟）</p>
-                        </div>
-                        <div class="content-item">
-                            <div class="content-item-title">Основное содержание (Core Content / 核心内容)</div>
-                            <div class="language-group">
-                                <span class="language-label">Русский</span>
-                                <p>Повторение по модулям (произношение/словарный запас/предложения/диалоги), оценка с помощью "тематических заданий" (например, ученик представляет свой день по-английски, имитирует сценарий покупок для завершения транзакции); интенсивное обучение для слабых мест (например, определенный тип фонем, определенный тип предложений).</p>
-                            </div>
-                            <div class="language-group">
-                                <span class="language-label">English</span>
-                                <p>Module-by-module review (pronunciation/vocabulary/sentence patterns/dialogues), assessment through "theme tasks" (e.g., asking learners to introduce their day in English, simulating a shopping scenario to complete a transaction); intensive training for weak points (e.g., a certain type of phoneme, a certain sentence pattern).</p>
-                            </div>
-                            <div class="language-group">
-                                <span class="language-label">中文</span>
-                                <p>分模块复习（发音/词汇/句型/对话），通过"主题任务"检验（如让学员用英语介绍自己的一天、模拟购物场景完成交易）；针对薄弱环节（如某类音标、某句型）强化训练。</p>
-                            </div>
-                        </div>
-                        <div class="content-item">
-                            <div class="content-item-title">Метод оценки (Assessment Method / 检验方式)</div>
-                            <div class="language-group">
-                                <span class="language-label">Русский</span>
-                                <p>Оральный тест (ответы на вопросы в диалоге), письменный тест (письмо букв, диктант слов, заполнение пропусков в простых предложениях), оценка завершенности тематических заданий.</p>
-                            </div>
-                            <div class="language-group">
-                                <span class="language-label">English</span>
-                                <p>Oral test (dialogue questions and answers), written test (letter spelling, word dictation, filling in blanks for simple sentence patterns), assessment of scenario task completion.</p>
-                            </div>
-                            <div class="language-group">
-                                <span class="language-label">中文</span>
-                                <p>口头测试（对话问答）、书面测试（字母拼写、单词默写、简单句型填空）、场景任务完成度评估。</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 第三部分：教学辅助工具 -->
-        <div class="section">
-            <div class="section-header">
-                <i class="fas fa-tools"></i>
-                <h3>3. Учебные материалы (Teaching Aids / 教学辅助工具)</h3>
-                <i class="fas fa-chevron-down toggle-icon"></i>
-            </div>
-            <div class="section-content">
-                <div class="language-group">
-                    <span class="language-label">Русский</span>
-                    <div class="tools-list">
-                        <div class="tools-item">Карточки с буквами</div>
-                        <div class="tools-item">Фонетические схемы</div>
-                        <div class="tools-item">Карточки с изображениями</div>
-                        <div class="tools-item">Аудиозаписи диалогов (медленная скорость)</div>
-                        <div class="tools-item">Доска и маркеры</div>
-                    </div>
-                </div>
-                <div class="language-group">
-                    <span class="language-label">English</span>
-                    <div class="tools-list">
-                        <div class="tools-item">Letter cards</div>
-                        <div class="tools-item">Phonetic charts</div>
-                        <div class="tools-item">Vocabulary picture cards</div>
-                        <div class="tools-item">Slow-speed dialogue recordings</div>
-                        <div class="tools-item">Whiteboard and markers</div>
-                    </div>
-                </div>
-                <div class="language-group">
-                    <span class="language-label">中文</span>
-                    <div class="tools-list">
-                        <div class="tools-item">字母卡片</div>
-                        <div class="tools-item">音标图表</div>
-                        <div class="tools-item">词汇图片卡</div>
-                        <div class="tools-item">英语日常对话录音（慢速版）</div>
-                        <div class="tools-item">白板与马克笔</div>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <div class="row" style="margin-top:8px;">
+    <div style="margin-right:10px;">
+      <label class="small">Gaylord 模式</label><br/>
+      <select id="gaylordMode">
+        <option value="center">居中（默认）</option>
+        <option value="custom">自定义偏移（dx,dy）</option>
+      </select>
     </div>
 
-    <script>
-        // 实现展开/折叠功能，提升移动端浏览体验
-        document.addEventListener('DOMContentLoaded', function() {
-            // 阶段卡片展开/折叠
-            const stageHeaders = document.querySelectorAll('.stage-header');
-            stageHeaders.forEach(header => {
-                header.addEventListener('click', function() {
-                    const content = this.nextElementSibling;
-                    const icon = this.querySelector('.toggle-icon');
-                    
-                    // 切换内容显示状态
-                    if (content.style.display === 'block') {
-                        content.style.display = 'none';
-                        icon.classList.remove('rotate');
-                    } else {
-                        content.style.display = 'block';
-                        icon.classList.add('rotate');
-                    }
-                });
-            });
+    <div id="offsetInputs" style="display:none;">
+      <label class="small-muted">dx (m)</label>
+      <input id="dx" type="number" step="0.01" value="0.10"/>
+      <label class="small-muted">dy (m)</label>
+      <input id="dy" type="number" step="0.01" value="0.00"/>
+      <button id="applyOffset" class="btn">应用到所有托盘</button>
+    </div>
 
-            // 大章节展开/折叠
-            const sectionHeaders = document.querySelectorAll('.section-header');
-            sectionHeaders.forEach(header => {
-                header.addEventListener('click', function() {
-                    const content = this.nextElementSibling;
-                    const icon = this.querySelector('.toggle-icon');
-                    
-                    if (content.style.maxHeight) {
-                        content.style.maxHeight = null;
-                        icon.classList.remove('rotate');
-                    } else {
-                        content.style.maxHeight = content.scrollHeight + 'px';
-                        icon.classList.add('rotate');
-                    }
-                });
-            });
+    <div style="margin-left:12px;">
+      <button id="exportCsv" class="btn csv-btn">导出 CSV / Export CSV</button>
+      <button id="downloadSvg" class="btn">导出图像 SVG</button>
+    </div>
+  </div>
+  <div class="note" id="noteArea">说明：坐标原点为车厢左上角内壁（单位 m）。CSV 字段包括：Vehicle, PalletIndex, CellX_m, CellY_m, PalletW_m, PalletH_m, Orientation, Gaylord_dx_m, Gaylord_dy_m, Gaylord_w_m, Gaylord_h_m, Height_m。</div>
+</div>
 
-            // 初始化所有章节内容高度
-            const sectionContents = document.querySelectorAll('.section-content');
-            sectionContents.forEach(content => {
-                content.style.maxHeight = content.scrollHeight + 'px';
-            });
-        });
-    </script>
+<div class="canvas" id="canvas"></div>
+
+<div class="footer" id="footerText">
+  <div class="small-muted">参考：Gaylord 定义与托盘配合常见说明（示例资料）。</div>
+  <ul>
+    <li><a class="link" href="https://www.inventoryops.com/inventoryops-glossary.html" target="_blank" rel="noopener">Glossary of Inventory Management and Warehouse Operations ...</a></li>
+    <li><a class="link" href="https://cdn2.hubspot.net/hubfs/435785/BJS%20Domestic%20Routing%20and%20Packaging%20Guide%202013.pdf" target="_blank" rel="noopener">BJ's Wholesale Club, Inc. Routing and Packaging Guide Domestic</a></li>
+  </ul>
+</div>
+
+<script>
+/* ---------- 数据定义（单位 m） ---------- */
+const vehicles = [
+  { id:'solo', key:'SOLO', L:7.2, W:2.48, nameCN:'SOLO', nameEN:'SOLO' }
+  // 该页面专注 SOLO；若需加入其他车型可扩展 vehicles 数组
+];
+const pallets = {
+  eu: { key:'eu', nameCN:'欧洲托盘', nameEN:'Europe pallet', w:1.2, h:0.8, area:1.2*0.8 },
+  ns: { key:'ns', nameCN:'非标准托盘', nameEN:'Non-standard pallet', w:1.2, h:1.0, area:1.2*1.0 }
+};
+const gaylord = { w:1.2, h:0.8, height:1.6 }; // Gaylord 实际箱体尺寸（底面 1.2×0.8 m, 高 1.6 m）
+
+/* ---------- DOM 元素 ---------- */
+const canvas = document.getElementById('canvas');
+const palletEUBtn = document.getElementById('palletEU');
+const palletNSBtn = document.getElementById('palletNS');
+const langCnBtn = document.getElementById('langCn');
+const langEnBtn = document.getElementById('langEn');
+const scaleInput = document.getElementById('scale');
+const gaylordModeSel = document.getElementById('gaylordMode');
+const offsetInputs = document.getElementById('offsetInputs');
+const dxInput = document.getElementById('dx');
+const dyInput = document.getElementById('dy');
+const applyOffsetBtn = document.getElementById('applyOffset');
+const exportCsvBtn = document.getElementById('exportCsv');
+const downloadSvgBtn = document.getElementById('downloadSvg');
+const noteArea = document.getElementById('noteArea');
+
+let activePallet = 'ns';
+let lang = 'cn';
+let scale = Number(scaleInput.value);
+let globalDx = null; // 若为 null 则按居中计算
+let globalDy = null;
+
+/* UI 状态 */
+function setActiveButton(btnGroup, keyBtn) {
+  btnGroup.forEach(b=>b.classList.remove('active'));
+  keyBtn.classList.add('active');
+}
+
+/* 事件绑定 */
+palletEUBtn.addEventListener('click', ()=>{ activePallet='eu'; palletEUBtn.classList.add('active'); palletNSBtn.classList.remove('active'); render(); });
+palletNSBtn.addEventListener('click', ()=>{ activePallet='ns'; palletNSBtn.classList.add('active'); palletEUBtn.classList.remove('active'); render(); });
+
+langCnBtn.addEventListener('click', ()=>{ lang='cn'; langCnBtn.classList.add('active'); langEnBtn.classList.remove('active'); updateLang(); render(); });
+langEnBtn.addEventListener('click', ()=>{ lang='en'; langEnBtn.classList.add('active'); langCnBtn.classList.remove('active'); updateLang(); render(); });
+
+scaleInput.addEventListener('change', ()=>{ scale = Number(scaleInput.value) || 24; render(); });
+
+gaylordModeSel.addEventListener('change', ()=>{
+  if(gaylordModeSel.value === 'custom') { offsetInputs.style.display='inline-block'; globalDx = Number(dxInput.value); globalDy = Number(dyInput.value); }
+  else { offsetInputs.style.display='none'; globalDx = null; globalDy = null; }
+  render();
+});
+
+applyOffsetBtn.addEventListener('click', ()=>{
+  globalDx = Number(dxInput.value) || 0;
+  globalDy = Number(dyInput.value) || 0;
+  render();
+});
+
+/* 导出 CSV */
+exportCsvBtn.addEventListener('click', ()=>{
+  const csv = buildCsv();
+  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  const fname = `SOLO_pallets_${activePallet}_${new Date().toISOString().slice(0,10)}.csv`;
+  a.download = fname;
+  a.style.display = 'none';
+  document.body.appendChild(a);
+  a.click();
+  setTimeout(()=>{ document.body.removeChild(a); URL.revokeObjectURL(url); }, 3000);
+});
+
+/* 导出 SVG（当前第一个 card） */
+downloadSvgBtn.addEventListener('click', ()=>{
+  const svgEl = document.querySelector('#canvas svg');
+  if(!svgEl) return alert(lang==='cn' ? '未找到 SVG' : 'SVG not found');
+  const serializer = new XMLSerializer();
+  const src = serializer.serializeToString(svgEl);
+  const blob = new Blob([src], {type: 'image/svg+xml;charset=utf-8'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `SOLO_layout_${activePallet}.svg`;
+  document.body.appendChild(a); a.click();
+  setTimeout(()=>{ document.body.removeChild(a); URL.revokeObjectURL(url); },3000);
+});
+
+/* 切换语言文本 */
+function updateLang(){
+  if(lang==='cn'){
+    document.getElementById('title-cn').textContent = 'SOLO — Gaylord 在托盘上的布局可视化与 CSV 导出（含偏移调节 / 中英）';
+    noteArea.textContent = '说明：坐标原点为车厢左上角内壁（单位 m）。CSV 字段包括：Vehicle, PalletIndex, CellX_m, CellY_m, PalletW_m, PalletH_m, Orientation, Gaylord_dx_m, Gaylord_dy_m, Gaylord_w_m, Gaylord_h_m, Height_m。';
+  } else {
+    document.getElementById('title-cn').textContent = 'SOLO — Gaylord pallet layout & CSV export (with offset control)';
+    noteArea.textContent = 'Note: coordinates origin = vehicle inner top-left (meters). CSV fields: Vehicle, PalletIndex, CellX_m, CellY_m, PalletW_m, PalletH_m, Orientation, Gaylord_dx_m, Gaylord_dy_m, Gaylord_w_m, Gaylord_h_m, Height_m.';
+  }
+}
+
+/* 计算格子摆放（与之前一致） */
+function computeGrid(L,W,pW,pH){
+  const nA_x = Math.floor(L / pW), nA_y = Math.floor(W / pH);
+  const nA = nA_x * nA_y;
+  const nB_x = Math.floor(L / pH), nB_y = Math.floor(W / pW);
+  const nB = nB_x * nB_y;
+  if(nA >= nB) return { cols: nA_x, rows: nA_y, cellW: pW, cellH: pH, orientation: 'A', total: nA };
+  else return { cols: nB_x, rows: nB_y, cellW: pH, cellH: pW, orientation: 'B', total: nB };
+}
+
+/* 渲染主函数 */
+function render(){
+  canvas.innerHTML = '';
+  scale = Number(scaleInput.value) || 24;
+  const pal = (activePallet === 'eu') ? pallets.eu : pallets.ns;
+
+  vehicles.forEach(v=>{
+    const card = document.createElement('div'); card.className='card';
+    const title = document.createElement('div'); title.className='vehicle-title';
+    title.textContent = (lang==='cn') ? `${v.nameCN} — ${v.L}×${v.W} m` : `${v.nameEN} — ${v.L}×${v.W} m`;
+    card.appendChild(title);
+
+    const svgW = Math.max(300, Math.round(v.L * scale) + 120);
+    const svgH = Math.max(180, Math.round(v.W * scale) + 100);
+    const viewW = svgW, viewH = svgH;
+
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('width', svgW);
+    svg.setAttribute('height', svgH);
+    svg.setAttribute('viewBox', `0 0 ${viewW} ${viewH}`);
+    svg.style.display = 'block';
+    // defs styles
+    const defs = document.createElementNS('http://www.w3.org/2000/svg','defs');
+    const style = document.createElementNS('http://www.w3.org/2000/svg','style');
+    style.textContent = `
+      .veh{fill:#fff;stroke:#2b3b4f;stroke-width:1.3;}
+      .pallet-ns{fill:#f6b042;stroke:#fff;stroke-width:0.8;}
+      .pallet-eu{fill:#60a5fa;stroke:#fff;stroke-width:0.8;}
+      .gaylord{fill:#ffffff;stroke:#1f2937;stroke-width:0.9;}
+      .label{font-size:11px;fill:#0b1826;}
+      .meta{font-size:11px;fill:#2b3b4f;}
+      .cell-index{font-size:10px;fill:#fff;}
+    `;
+    defs.appendChild(style);
+    svg.appendChild(defs);
+
+    // drawing group with margin
+    const g = document.createElementNS('http://www.w3.org/2000/svg','g');
+    const marginX = 60, marginY = 40;
+    g.setAttribute('transform', `translate(${marginX},${marginY})`);
+    svg.appendChild(g);
+
+    // vehicle rect
+    const vehRect = document.createElementNS('http://www.w3.org/2000/svg','rect');
+    vehRect.setAttribute('class','veh');
+    vehRect.setAttribute('x',0);
+    vehRect.setAttribute('y',0);
+    vehRect.setAttribute('width', v.L * scale);
+    vehRect.setAttribute('height', v.W * scale);
+    vehRect.setAttribute('rx',6);
+    vehRect.setAttribute('ry',6);
+    g.appendChild(vehRect);
+
+    // dims
+    const xDim = document.createElementNS('http://www.w3.org/2000/svg','text');
+    xDim.setAttribute('class','meta');
+    xDim.setAttribute('x',(v.L*scale)/2);
+    xDim.setAttribute('y', v.W*scale + 22);
+    xDim.setAttribute('text-anchor','middle');
+    xDim.textContent = `${v.L} m`;
+    g.appendChild(xDim);
+    const yGroup = document.createElementNS('http://www.w3.org/2000/svg','g');
+    yGroup.setAttribute('transform', `translate(-20,${(v.W*scale)/2}) rotate(-90)`);
+    const yDim = document.createElementNS('http://www.w3.org/2000/svg','text');
+    yDim.setAttribute('class','meta');
+    yDim.setAttribute('x',0); yDim.setAttribute('y',0);
+    yDim.setAttribute('text-anchor','middle');
+    yDim.textContent = `${v.W} m`;
+    yGroup.appendChild(yDim);
+    g.appendChild(yGroup);
+
+    // compute grid
+    const grid = computeGrid(v.L, v.W, pal.w, pal.h);
+    const cols = grid.cols, rows = grid.rows;
+    const cellW = grid.cellW, cellH = grid.cellH;
+
+    // draw pallets and gaylords
+    let palletIndex = 0;
+    const palClass = (activePallet==='eu') ? 'pallet-eu' : 'pallet-ns';
+    for(let r=0;r<rows;r++){
+      for(let c=0;c<cols;c++){
+        const x = c * cellW * scale;
+        const y = r * cellH * scale;
+        // pallet rect
+        const pr = document.createElementNS('http://www.w3.org/2000/svg','rect');
+        pr.setAttribute('class', palClass);
+        pr.setAttribute('x', x);
+        pr.setAttribute('y', y);
+        pr.setAttribute('width', cellW * scale);
+        pr.setAttribute('height', cellH * scale);
+        pr.setAttribute('rx',4);
+        pr.setAttribute('ry',4);
+        g.appendChild(pr);
+
+        // pallet index label
+        palletIndex++;
+        const idxText = document.createElementNS('http://www.w3.org/2000/svg','text');
+        idxText.setAttribute('class','cell-index');
+        idxText.setAttribute('x', x + 6);
+        idxText.setAttribute('y', y + 12);
+        idxText.textContent = `#${palletIndex}`;
+        g.appendChild(idxText);
+
+        // compute gaylord dx/dy (m)
+        let dx_m = 0, dy_m = 0;
+        if(globalDx !== null && globalDx !== undefined) {
+          dx_m = globalDx;
+          dy_m = globalDy || 0;
+        } else {
+          // 居中逻辑：按照 cell 长宽与 gaylord 大小居中
+          dx_m = (cellW - gaylord.w) / 2;
+          dy_m = (cellH - gaylord.h) / 2;
+        }
+        // convert to px
+        const dx_px = dx_m * scale;
+        const dy_px = dy_m * scale;
+
+        // draw gaylord rect inside pallet
+        const gr = document.createElementNS('http://www.w3.org/2000/svg','rect');
+        gr.setAttribute('class','gaylord');
+        gr.setAttribute('x', x + dx_px);
+        gr.setAttribute('y', y + dy_px);
+        gr.setAttribute('width', gaylord.w * scale);
+        gr.setAttribute('height', gaylord.h * scale);
+        gr.setAttribute('rx',3);
+        gr.setAttribute('ry',3);
+        g.appendChild(gr);
+
+        // small label on gaylord with index
+        const gLabel = document.createElementNS('http://www.w3.org/2000/svg','text');
+        gLabel.setAttribute('class','label');
+        gLabel.setAttribute('x', x + dx_px + 6);
+        gLabel.setAttribute('y', y + dy_px + 14);
+        gLabel.textContent = `${palletIndex}`;
+        g.appendChild(gLabel);
+
+      }
+    }
+
+    // overlay total
+    const totalText = document.createElementNS('http://www.w3.org/2000/svg','text');
+    totalText.setAttribute('class','label');
+    totalText.setAttribute('x', Math.min(v.L*scale - 6, 6));
+    totalText.setAttribute('y', Math.min(v.W*scale - 6, 14));
+    totalText.setAttribute('text-anchor','end');
+    totalText.textContent = `${grid.total} pcs`;
+    g.appendChild(totalText);
+
+    svg.appendChild(g);
+    card.appendChild(svg);
+
+    // meta block
+    const meta = document.createElement('div'); meta.className='meta';
+    const vehicleArea = (v.L * v.W).toFixed(3);
+    const palCount = grid.total;
+    const palAreaTotal = +(palCount * pal.area).toFixed(3);
+    const percent = +((palAreaTotal / (v.L * v.W)) * 100).toFixed(1);
+    if(lang==='cn'){
+      meta.innerHTML = `<div>托盘类型：<strong>${(activePallet==='eu'?pallets.eu.nameCN:pallets.ns.nameCN)} ${pal.w}×${pal.h} m</strong></div>
+                        <div>理论可放（单层格子最大）：<strong>${palCount}</strong> 个</div>
+                        <div>托盘总占地：<strong>${palAreaTotal} m²</strong>（车厢地面 ${vehicleArea} m²， 占比 ${percent}%）</div>
+                        <div class="small-muted">Gaylord（箱体）尺寸：${gaylord.w}×${gaylord.h} m，高 ${gaylord.height} m。当前偏移 dx=${(globalDx===null?((cellW - gaylord.w)/2).toFixed(3):globalDx.toFixed(3))} m, dy=${(globalDy===null?((cellH - gaylord.h)/2).toFixed(3):globalDy.toFixed(3))} m。</div>`;
+    } else {
+      meta.innerHTML = `<div>Pallet type: <strong>${(activePallet==='eu'?pallets.eu.nameEN:pallets.ns.nameEN)} ${pal.w}×${pal.h} m</strong></div>
+                        <div>Theoretical max (single-layer grid): <strong>${palCount}</strong> pcs</div>
+                        <div>Total pallet area: <strong>${palAreaTotal} m²</strong> (vehicle floor ${vehicleArea} m², share ${percent}%)</div>
+                        <div class="small-muted">Gaylord size: ${gaylord.w}×${gaylord.h} m, height ${gaylord.height} m. Current offset dx=${(globalDx===null?((cellW - gaylord.w)/2).toFixed(3):globalDx.toFixed(3))} m, dy=${(globalDy===null?((cellH - gaylord.h)/2).toFixed(3):globalDy.toFixed(3))} m.</div>`;
+    }
+    card.appendChild(meta);
+
+    canvas.appendChild(card);
+  });
+}
+
+/* 生成 CSV 内容 */
+function buildCsv(){
+  const pal = (activePallet === 'eu') ? pallets.eu : pallets.ns;
+  const rows = [];
+  // header
+  rows.push(['Vehicle','PalletIndex','CellX_m','CellY_m','PalletW_m','PalletH_m','Orientation','Gaylord_dx_m','Gaylord_dy_m','Gaylord_w_m','Gaylord_h_m','Height_m'].join(','));
+  vehicles.forEach(v=>{
+    const grid = computeGrid(v.L, v.W, pal.w, pal.h);
+    const cols = grid.cols, rowsCount = grid.rows;
+    const cellW = grid.cellW, cellH = grid.cellH;
+    let palletIndex = 0;
+    for(let r=0;r<rowsCount;r++){
+      for(let c=0;c<cols;c++){
+        palletIndex++;
+        const cellX_m = +(c * cellW).toFixed(3);
+        const cellY_m = +(r * cellH).toFixed(3);
+        let dx_m = 0, dy_m = 0;
+        if(globalDx !== null && globalDx !== undefined) {
+          dx_m = +(globalDx).toFixed(3);
+          dy_m = +(globalDy || 0).toFixed(3);
+        } else {
+          dx_m = +((cellW - gaylord.w)/2).toFixed(3);
+          dy_m = +((cellH - gaylord.h)/2).toFixed(3);
+        }
+        const orientation = (grid.orientation === 'A') ? `${cellW}x${cellH}` : `${cellW}x${cellH}`;
+        const line = [
+          v.key,
+          palletIndex,
+          cellX_m.toFixed(3),
+          cellY_m.toFixed(3),
+          cellW.toFixed(3),
+          cellH.toFixed(3),
+          orientation,
+          dx_m.toFixed(3),
+          dy_m.toFixed(3),
+          gaylord.w.toFixed(3),
+          gaylord.h.toFixed(3),
+          gaylord.height.toFixed(3)
+        ].join(',');
+        rows.push(line);
+      }
+    }
+  });
+  return rows.join('\n');
+}
+
+/* 初始渲染 */
+updateLang();
+render();
+
+</script>
 </body>
 </html>
